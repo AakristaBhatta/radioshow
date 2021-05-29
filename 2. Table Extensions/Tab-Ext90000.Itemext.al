@@ -1,4 +1,4 @@
-tableextension 90000 Item_ext extends Item
+tableextension 90000 "Item_ext" extends Item
 {
     fields
     {

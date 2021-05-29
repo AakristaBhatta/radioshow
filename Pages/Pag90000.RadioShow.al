@@ -1,15 +1,15 @@
-page 90001 "Radio Show Card"
+page 90000 "Radio Show"
 {
-    PageType = Card;
+    PageType = List;
     ApplicationArea = All;
-    UsageCategory = Administration;
+    UsageCategory = Lists;
     SourceTable = "Radio Show";
-
+    CardPageId = "Radio Show Card";
     layout
     {
         area(Content)
         {
-            group(Group)
+            repeater(Group)
             {
                 field("No."; Rec."No.")
                 {
@@ -36,45 +36,6 @@ page 90001 "Radio Show Card"
                 {
                     ApplicationArea = All;
                 }
-                field(Frequency; rec.Frequency)
-                {
-                    ApplicationArea = All;
-                }
-            }
-            group(Requirements)
-            {
-                field("PSA Planned Quantity"; Rec."PSA Planned Quantity")
-                {
-                    ApplicationArea = All;
-                }
-                field("Ads Planned Qantity"; Rec."Ads Planned Qantity")
-                {
-                    ApplicationArea = All;
-                }
-                field("News Required"; Rec."News Required")
-                {
-                    ApplicationArea = All;
-                }
-                field("News Duration"; Rec."News Duration")
-                {
-                    ApplicationArea = All;
-                }
-                field("Sports Required"; Rec."Sports Required")
-                {
-                    ApplicationArea = All;
-                }
-                field("Sports Duration"; Rec."Sports Duration")
-                {
-                    ApplicationArea = All;
-                }
-                field("Weather Required"; Rec."Weather Duration")
-                {
-                    ApplicationArea = All;
-                }
-
-            }
-            group(Statistics)
-            {
                 field("Average Listeners"; Rec."Average Listeners")
                 {
                     ApplicationArea = All;
@@ -91,12 +52,20 @@ page 90001 "Radio Show Card"
                 {
                     ApplicationArea = All;
                 }
+
             }
 
 
-
-
         }
+        area(FactBoxes)
+        {
+            part(Fans; "Radio Show Fan Factbox")
+            {
+                SubPageLink = "Radio Show No." = field("No.");
+                ApplicationArea = basic;
+            }
+        }
+
     }
 
     actions

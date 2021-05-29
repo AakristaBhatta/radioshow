@@ -1,19 +1,21 @@
-page 90000 "Radio Show"
+page 90001 "Radio Show Card"
 {
-    PageType = List;
+    PageType = Card;
     ApplicationArea = All;
-    UsageCategory = Lists;
+    UsageCategory = Administration;
     SourceTable = "Radio Show";
-    CardPageId = "Radio Show Card";
+    
     layout
     {
         area(Content)
         {
-            repeater(Group)
+            group(Group)
             {
+            
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
+                
 
                 }
                 field("Radio Show Type"; rec."Radio Show Type")
@@ -36,6 +38,45 @@ page 90000 "Radio Show"
                 {
                     ApplicationArea = All;
                 }
+                field(Frequency; rec.Frequency)
+                {
+                    ApplicationArea = All;
+                }
+            }
+            group(Requirements)
+            {
+                field("PSA Planned Quantity"; Rec."PSA Planned Quantity")
+                {
+                    ApplicationArea = All;
+                }
+                field("Ads Planned Qantity"; Rec."Ads Planned Qantity")
+                {
+                    ApplicationArea = All;
+                }
+                field("News Required"; Rec."News Required")
+                {
+                    ApplicationArea = All;
+                }
+                field("News Duration"; Rec."News Duration")
+                {
+                    ApplicationArea = All;
+                }
+                field("Sports Required"; Rec."Sports Required")
+                {
+                    ApplicationArea = All;
+                }
+                field("Sports Duration"; Rec."Sports Duration")
+                {
+                    ApplicationArea = All;
+                }
+                field("Weather Required"; Rec."Weather Duration")
+                {
+                    ApplicationArea = All;
+                }
+
+            }
+            group(Statistics)
+            {
                 field("Average Listeners"; Rec."Average Listeners")
                 {
                     ApplicationArea = All;
@@ -53,6 +94,10 @@ page 90000 "Radio Show"
                     ApplicationArea = All;
                 }
             }
+
+
+
+
         }
     }
 
